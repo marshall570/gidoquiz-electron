@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  scroll-behavior: smooth;
+  background: #1c1c1c;
+}
+
+.questions-area {
+  display: flex;
+  width: 70%;  
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.header-questions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.header-questions span {
+  cursor: pointer;
+  user-select: none;
+}
+
+.questions-area h2 {
+  font-size: 1.2rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  box-shadow: 0.5vh 0.5vh 0.25vh 0vh rgba(0, 0, 0, 0.25);
+  cursor: default;
+  min-height: 35%;
+  width: 100%;
+}
+
+.answer-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.answer-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 95%;
+  height: 100%;
+}
+
+.answer-row span {
+  font-size: 1rem;
+  text-align: justify;
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0.5vh 0.5vh 0.25vh 0vh rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  width: 95%;
+  transition: 0.2s;
+}
+
+.answer-row span:hover {
+  filter: brightness(75%);
+}
+
+.teams {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 15%;
+  height: 90%;
+  padding: 1rem;
+  margin: 1rem;
+  background: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0.5vh 0.5vh 0.25vh 0vh rgba(0, 0, 0, 0.25);
+}
+
+.teams h1 {
+  font-size: 1.25rem;
+  text-decoration: underline;
+}
+
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.team label {
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.score-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 65%;
+  font-size: 1rem;
+}
+
+.score-buttons span {
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+
+.score-buttons p {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+

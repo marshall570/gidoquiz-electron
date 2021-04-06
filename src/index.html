@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <script src="script.js"></script>
+  <title>SHOW DO BILHÃO | by team nyx</title>
+</head>
+
+<body onload="handle_load()">
+  <section class="questions-area">
+    <div class="header-questions">
+      <span onclick="handle_question_back()">⬅</span>
+      <h1 id="question_header">QUESTÃO</h1>
+      <span onclick="handle_question_fwd()">➡</span>
+    </div>
+    
+    <h2 id="question_text"> </h2>
+
+    <div class="answer-area">
+      <div class="answer-row">
+        <span id="a" onclick="handle_answer('a')"> </span>
+        <span id="b" onclick="handle_answer('b')"> </span>
+      </div>
+
+      <div class="answer-row">
+        <span id="c" onclick="handle_answer('c')"> </span>
+        <span id="d" onclick="handle_answer('d')"> </span>
+      </div>
+    </div>
+  </section>
+
+  <section class="teams">
+    <div class="team">
+      <label for="">WORLD</label>
+
+      <div class="score-buttons">
+        <span onclick="handle_score_minus('world_score')">➖</span>
+        <p id="world_score">0</p>
+        <span onclick="handle_score_plus('world_score')">➕</span>
+      </div>
+    </div>
+
+    <div class="team">
+      <label for="" style="color: #081320;">NYX</label>
+
+      <div class="score-buttons">
+        <span onclick="handle_score_minus('nyx_score')">➖</span>
+        <p id="nyx_score">0</p>
+        <span onclick="handle_score_plus('nyx_score')">➕</span>
+      </div>
+    </div>
+
+    <div class="team">
+      <label for="">PRIESTESS</label>
+
+      <div class="score-buttons">
+        <span onclick="handle_score_minus('priestess_score')">➖</span>
+        <p id="priestess_score">0</p>
+        <span onclick="handle_score_plus('priestess_score')">➕</span>
+      </div>
+    </div>
+
+    <div class="team">
+      <label for="" style="color: #ff6600;">BDTW</label>
+
+      <div class="score-buttons">
+        <span onclick="handle_score_minus('bdtw_score')">➖</span>
+        <p id="bdtw_score">0</p>
+        <span onclick="handle_score_plus('bdtw_score')">➕</span>
+      </div>
+    </div>
+
+    <div class="team">
+      <label for="" style="color: #ffc400;">GDV</label>
+
+      <div class="score-buttons">
+        <span onclick="handle_score_minus('gdv_score')">➖</span>
+        <p id="gdv_score">0</p>
+        <span onclick="handle_score_plus('gdv_score')">➕</span>
+      </div>
+    </div>
+
+    <div class="team">
+      <label for="" style="color: #0000ff;">VIS</label>
+
+      <div class="score-buttons">
+        <span onclick="handle_score_minus('vis_score')">➖</span>
+        <p id="vis_score">0</p>
+        <span onclick="handle_score_plus('vis_score')">➕</span>
+      </div>
+    </div>
+
+    <div class="team">
+      <label for="">LOVERS</label>
+
+      <div class="score-buttons">
+        <span onclick="handle_score_minus('lovers_score')">➖</span>
+        <p id="lovers_score">0</p>
+        <span onclick="handle_score_plus('lovers_score')">➕</span>
+      </div>
+    </div>
+
+    <div class="team">
+      <label for="">JUDGEMENT</label>
+
+      <div class="score-buttons">
+        <span onclick="handle_score_minus('judgement_score')">➖</span>
+        <p id="judgement_score">0</p>
+        <span onclick="handle_score_plus('judgement_score')">➕</span>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
