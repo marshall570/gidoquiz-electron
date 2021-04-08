@@ -74,9 +74,11 @@ function handle_question_fwd() {
 function select_question() {
     try {
         api.get(`game?qid=${localStorage.getItem('current_question')}`).then(response => {
-            const values = response.data[0]
+            localStorage.setItem('answered', 'no')
             
-            document.querySelector('h1#question_header').textContent = `QUESTÃO POR EQUIPE ${values.equipe.toUpperCase()}`
+            const values = response.data[0]
+
+            document.querySelector('h1#question_header').textContent = `${values.equipe.toUpperCase()} DATASET`
 
             document.querySelector('h2#question_text').textContent = values.pergunta
 
@@ -98,6 +100,39 @@ function select_question() {
 
             document.querySelector(`span#d`).style.background = '#ffffff'
             document.querySelector(`span#d`).style.color = 'inherit'
+
+            switch (values.equipe) {
+                case 'nyx':
+                    document.body.style.background = '#081320'
+                    document.querySelector('h1#question_header').style.color = '#ffffff'
+                    document.querySelector('span#question_back').style.color = '#ffffff'
+                    document.querySelector('span#question_fwd').style.color = '#ffffff'
+                    break;
+                case 'bdtw':
+                    document.body.style.background = '#ff6600'
+                    document.querySelector('h1#question_header').style.color = '#ffffff'
+                    document.querySelector('span#question_back').style.color = '#ffffff'
+                    document.querySelector('span#question_fwd').style.color = '#ffffff'
+                    break
+                case 'gdv':
+                    document.body.style.background = '#ffc400'
+                    document.querySelector('h1#question_header').style.color = '#111111'
+                    document.querySelector('span#question_back').style.color = '#111111'
+                    document.querySelector('span#question_fwd').style.color = '#111111'
+                    break
+                case 'vis':
+                    document.body.style.background = '#009CBF'
+                    document.querySelector('h1#question_header').style.color = '#ffffff'
+                    document.querySelector('span#question_back').style.color = '#ffffff'
+                    document.querySelector('span#question_fwd').style.color = '#ffffff'
+                    break
+                default:
+                    document.body.style.background = '#d58d9c'
+                    document.querySelector('h1#question_header').style.color = '#ffffff'
+                    document.querySelector('span#question_back').style.color = '#ffffff'
+                    document.querySelector('span#question_fwd').style.color = '#ffffff'
+                    break;
+            }
         })
     } catch (error) {
         alert(error)
@@ -107,15 +142,19 @@ function select_question() {
 function handle_answer(alt) {
     const answer = localStorage.getItem('answer')
 
-    if(alt === answer) {
-        document.querySelector(`span#${alt}`).style.background = 'green'
-        document.querySelector(`span#${alt}`).style.color = 'white'
-    } else {
-        document.querySelector(`span#${alt}`).style.background = 'red'
-        document.querySelector(`span#${alt}`).style.color = 'white'
-        
-        document.querySelector(`span#${answer}`).style.background = 'green'
-        document.querySelector(`span#${answer}`).style.color = 'white'
+    if (localStorage.getItem('answered') === 'no') {
+        if (alt === answer) {
+            document.querySelector(`span#${alt}`).style.background = 'green'
+            document.querySelector(`span#${alt}`).style.color = 'white'
+        } else {
+            document.querySelector(`span#${alt}`).style.background = 'red'
+            document.querySelector(`span#${alt}`).style.color = 'white'
+    
+            document.querySelector(`span#${answer}`).style.background = 'green'
+            document.querySelector(`span#${answer}`).style.color = 'white'
+        }
+
+        localStorage.setItem('answered', 'yes')
     }
 }
 
@@ -127,4 +166,8 @@ function get_total() {
     } catch (error) {
         alert(error)
     }
+}
+
+function pop_wildcard(team) {
+    document.querySelector(`label#${team}`).remove()
 }

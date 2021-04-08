@@ -11,32 +11,13 @@
 </head>
 
 <body onload="handle_load()">
-  <section class="questions-area">
-    <div class="header-questions">
-      <span onclick="handle_question_back()">⬅</span>
-      <h1 id="question_header">QUESTÃO</h1>
-      <span onclick="handle_question_fwd()">➡</span>
-    </div>
-    
-    <h2 id="question_text"> </h2>
-
-    <div class="answer-area">
-      <div class="answer-row">
-        <span id="a" onclick="handle_answer('a')"> </span>
-        <span id="b" onclick="handle_answer('b')"> </span>
-      </div>
-
-      <div class="answer-row">
-        <span id="c" onclick="handle_answer('c')"> </span>
-        <span id="d" onclick="handle_answer('d')"> </span>
-      </div>
-    </div>
-  </section>
-
   <section class="teams">
     <div class="team">
-      <label for="">WORLD</label>
-
+      <div class="team-header">
+        <label for="">WRD</label>
+        <label for="" class="wildcard" id="wild_wrd" ondblclick="pop_wildcard('wild_wrd')">🃏</label>
+      </div>
+      
       <div class="score-buttons">
         <span onclick="handle_score_minus('world_score')">➖</span>
         <p id="world_score">0</p>
@@ -45,7 +26,10 @@
     </div>
 
     <div class="team">
-      <label for="" style="color: #081320;">NYX</label>
+      <div class="team-header">
+        <label for="" style="color: #081320;">NYX</label>
+        <label for="" class="wildcard" id="wild_nyx" ondblclick="pop_wildcard('wild_nyx')">🃏</label>
+      </div>
 
       <div class="score-buttons">
         <span onclick="handle_score_minus('nyx_score')">➖</span>
@@ -55,7 +39,10 @@
     </div>
 
     <div class="team">
-      <label for="">PRIESTESS</label>
+      <div class="team-header">
+        <label for="">PST</label>
+        <label for="" class="wildcard" id="wild_pst" ondblclick="pop_wildcard('wild_pst')">🃏</label>
+      </div>
 
       <div class="score-buttons">
         <span onclick="handle_score_minus('priestess_score')">➖</span>
@@ -65,7 +52,10 @@
     </div>
 
     <div class="team">
-      <label for="" style="color: #ff6600;">BDTW</label>
+      <div class="team-header">
+        <label for="" style="color: #ff6600;">BDTW</label>
+        <label for="" class="wildcard" id="wild_bdtw" ondblclick="pop_wildcard('wild_bdtw')">🃏</label>
+      </div>
 
       <div class="score-buttons">
         <span onclick="handle_score_minus('bdtw_score')">➖</span>
@@ -75,7 +65,10 @@
     </div>
 
     <div class="team">
-      <label for="" style="color: #ffc400;">GDV</label>
+      <div class="team-header">
+        <label for="" style="color: #ffc400;">GDV</label>
+        <label for="" class="wildcard" id="wild_gdv" ondblclick="pop_wildcard('wild_gdv')">🃏</label>
+      </div>
 
       <div class="score-buttons">
         <span onclick="handle_score_minus('gdv_score')">➖</span>
@@ -85,7 +78,10 @@
     </div>
 
     <div class="team">
-      <label for="" style="color: #0000ff;">VIS</label>
+      <div class="team-header">
+        <label for="" style="color: #009CBF;">VIS</label>
+        <label for="" class="wildcard" id="wild_vis" ondblclick="pop_wildcard('wild_vis')">🃏</label>
+      </div>
 
       <div class="score-buttons">
         <span onclick="handle_score_minus('vis_score')">➖</span>
@@ -95,7 +91,10 @@
     </div>
 
     <div class="team">
-      <label for="">LOVERS</label>
+      <div class="team-header">
+        <label for="">LVS</label>
+        <label for="" class="wildcard" id="wild_lvs" ondblclick="pop_wildcard('wild_lvs')">🃏</label>
+      </div>
 
       <div class="score-buttons">
         <span onclick="handle_score_minus('lovers_score')">➖</span>
@@ -105,12 +104,37 @@
     </div>
 
     <div class="team">
-      <label for="">JUDGEMENT</label>
+      <div class="team-header">
+        <label for="">JDGE</label>
+        <label for="" class="wildcard" id="wild_jdge" ondblclick="pop_wildcard('wild_jdge')">🃏</label>
+      </div>
 
       <div class="score-buttons">
         <span onclick="handle_score_minus('judgement_score')">➖</span>
         <p id="judgement_score">0</p>
         <span onclick="handle_score_plus('judgement_score')">➕</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="questions-area">
+    <div class="header-questions">
+      <span id="question_back" onclick="handle_question_back()">⬅</span>
+      <h1 id="question_header"></h1>
+      <span id="question_fwd" onclick="handle_question_fwd()">➡</span>
+    </div>
+    
+    <h2 id="question_text"></h2>
+
+    <div class="answer-area">
+      <div class="answer-row">
+        <span id="a" onclick="handle_answer('a')"></span>
+        <span id="b" onclick="handle_answer('b')"></span>
+      </div>
+
+      <div class="answer-row">
+        <span id="c" onclick="handle_answer('c')"></span>
+        <span id="d" onclick="handle_answer('d')"></span>
       </div>
     </div>
   </section>

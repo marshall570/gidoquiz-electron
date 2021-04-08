@@ -1,8 +1,8 @@
 {
   "name": "quizshow",
-  "productName": "quizshow",
+  "productName": "Gincana Quiz",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "Jogo de quiz para a Gincana imagens das organizações",
   "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",
@@ -12,7 +12,7 @@
     "lint": "echo \"No linting configured\""
   },
   "keywords": [],
-  "author": "marshall",
+  "author": "Gustavo Sergio Fernandes",
   "license": "MIT",
   "config": {
     "forge": {
@@ -27,16 +27,8 @@
         {
           "name": "@electron-forge/maker-zip",
           "platforms": [
-            "darwin"
+            "darwin", "linux"
           ]
-        },
-        {
-          "name": "@electron-forge/maker-deb",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
-          "config": {}
         }
       ]
     }
@@ -51,8 +43,6 @@
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.54",
-    "@electron-forge/maker-deb": "^6.0.0-beta.54",
-    "@electron-forge/maker-rpm": "^6.0.0-beta.54",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
     "@electron-forge/maker-zip": "^6.0.0-beta.54",
     "electron": "12.0.2"

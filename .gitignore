@@ -91,3 +91,4 @@ out/
 *migrations*
 *.sql
 *.sqlite
+*datasets*
