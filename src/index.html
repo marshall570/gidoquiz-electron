@@ -7,27 +7,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="index.css">
   <script src="script.js"></script>
-  <title>SHOW DO BILHÃO | by team nyx</title>
+  <title>GIDA QUIZ</title>
 </head>
 
 <body onload="handle_load()">
   <section class="teams">
     <div class="team">
       <div class="team-header">
-        <label for="">WRD</label>
-        <label for="" class="wildcard" id="wild_wrd" ondblclick="pop_wildcard('wild_wrd')">🃏</label>
+        <label for="" style="color: #fd1115;">THA</label>
+        <label for="" class="wildcard" id="wild_tha" ondblclick="pop_wildcard('wild_tha')">🃏</label>
       </div>
       
       <div class="score-buttons">
-        <span onclick="handle_score_minus('world_score')">➖</span>
-        <p id="world_score">0</p>
-        <span onclick="handle_score_plus('world_score')">➕</span>
+        <span onclick="handle_score_minus('tha_score')">➖</span>
+        <p id="tha_score">0</p>
+        <span onclick="handle_score_plus('tha_score')">➕</span>
       </div>
     </div>
 
     <div class="team">
       <div class="team-header">
-        <label for="" style="color: #081320;">NYX</label>
+        <label for="" style="color: #191b1f;">NYX</label>
         <label for="" class="wildcard" id="wild_nyx" ondblclick="pop_wildcard('wild_nyx')">🃏</label>
       </div>
 
@@ -40,14 +40,14 @@
 
     <div class="team">
       <div class="team-header">
-        <label for="">PST</label>
-        <label for="" class="wildcard" id="wild_pst" ondblclick="pop_wildcard('wild_pst')">🃏</label>
+        <label for="" style="color: #4d0080;">RAF</label>
+        <label for="" class="wildcard" id="wild_raf" ondblclick="pop_wildcard('wild_raf')">🃏</label>
       </div>
 
       <div class="score-buttons">
-        <span onclick="handle_score_minus('priestess_score')">➖</span>
-        <p id="priestess_score">0</p>
-        <span onclick="handle_score_plus('priestess_score')">➕</span>
+        <span onclick="handle_score_minus('raf_score')">➖</span>
+        <p id="raf_score">0</p>
+        <span onclick="handle_score_plus('raf_score')">➕</span>
       </div>
     </div>
 
@@ -92,27 +92,27 @@
 
     <div class="team">
       <div class="team-header">
-        <label for="">LVS</label>
-        <label for="" class="wildcard" id="wild_lvs" ondblclick="pop_wildcard('wild_lvs')">🃏</label>
+        <label for="" style="color: #00801c;">ROB</label>
+        <label for="" class="wildcard" id="wild_rob" ondblclick="pop_wildcard('wild_rob')">🃏</label>
       </div>
 
       <div class="score-buttons">
-        <span onclick="handle_score_minus('lovers_score')">➖</span>
-        <p id="lovers_score">0</p>
-        <span onclick="handle_score_plus('lovers_score')">➕</span>
+        <span onclick="handle_score_minus('rob_score')">➖</span>
+        <p id="rob_score">0</p>
+        <span onclick="handle_score_plus('rob_score')">➕</span>
       </div>
     </div>
 
     <div class="team">
       <div class="team-header">
-        <label for="">JDGE</label>
-        <label for="" class="wildcard" id="wild_jdge" ondblclick="pop_wildcard('wild_jdge')">🃏</label>
+        <label for="" style="color: #ba55d3;">LET</label>
+        <label for="" class="wildcard" id="wild_let" ondblclick="pop_wildcard('wild_let')">🃏</label>
       </div>
 
       <div class="score-buttons">
-        <span onclick="handle_score_minus('judgement_score')">➖</span>
-        <p id="judgement_score">0</p>
-        <span onclick="handle_score_plus('judgement_score')">➕</span>
+        <span onclick="handle_score_minus('let_score')">➖</span>
+        <p id="let_score">0</p>
+        <span onclick="handle_score_plus('let_score')">➕</span>
       </div>
     </div>
   </section>
@@ -129,11 +129,11 @@
     <div class="answer-area">
       <div class="answer-row">
         <span id="a" onclick="handle_answer('a')"></span>
-        <span id="b" onclick="handle_answer('b')"></span>
-      </div>
-
-      <div class="answer-row">
         <span id="c" onclick="handle_answer('c')"></span>
+      </div>
+      
+      <div class="answer-row">
+        <span id="b" onclick="handle_answer('b')"></span>
         <span id="d" onclick="handle_answer('d')"></span>
       </div>
     </div>

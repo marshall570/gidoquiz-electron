@@ -4,23 +4,23 @@ function handle_load() {
     get_total()
     localStorage.setItem('current_question', 1)
 
-    localStorage.setItem('world_score', 0)
+    localStorage.setItem('tha_score', 0)
     localStorage.setItem('nyx_score', 0)
-    localStorage.setItem('priestess_score', 0)
+    localStorage.setItem('raf_score', 0)
     localStorage.setItem('bdtw_score', 0)
     localStorage.setItem('gdv_score', 0)
     localStorage.setItem('vis_score', 0)
-    localStorage.setItem('lovers_score', 0)
-    localStorage.setItem('judgement_score', 0)
+    localStorage.setItem('rob_score', 0)
+    localStorage.setItem('let_score', 0)
 
-    document.querySelector('p#world_score').textContent = localStorage.getItem('world_score')
+    document.querySelector('p#tha_score').textContent = localStorage.getItem('tha_score')
     document.querySelector('p#nyx_score').textContent = localStorage.getItem('nyx_score')
-    document.querySelector('p#priestess_score').textContent = localStorage.getItem('priestess_score')
+    document.querySelector('p#raf_score').textContent = localStorage.getItem('raf_score')
     document.querySelector('p#bdtw_score').textContent = localStorage.getItem('bdtw_score')
     document.querySelector('p#gdv_score').textContent = localStorage.getItem('gdv_score')
     document.querySelector('p#vis_score').textContent = localStorage.getItem('vis_score')
-    document.querySelector('p#lovers_score').textContent = localStorage.getItem('lovers_score')
-    document.querySelector('p#judgement_score').textContent = localStorage.getItem('judgement_score')
+    document.querySelector('p#rob_score').textContent = localStorage.getItem('rob_score')
+    document.querySelector('p#let_score').textContent = localStorage.getItem('let_score')
 
     select_question()
 }
@@ -78,7 +78,7 @@ function select_question() {
             
             const values = response.data[0]
 
-            document.querySelector('h1#question_header').textContent = `${values.equipe.toUpperCase()} DATASET`
+            document.querySelector('h1#question_header').textContent = `${values.equipe.toUpperCase()}`
 
             document.querySelector('h2#question_text').textContent = values.pergunta
 
@@ -103,7 +103,7 @@ function select_question() {
 
             switch (values.equipe) {
                 case 'nyx':
-                    document.body.style.background = '#081320'
+                    document.body.style.background = '#191b1f'
                     document.querySelector('h1#question_header').style.color = '#ffffff'
                     document.querySelector('span#question_back').style.color = '#ffffff'
                     document.querySelector('span#question_fwd').style.color = '#ffffff'
