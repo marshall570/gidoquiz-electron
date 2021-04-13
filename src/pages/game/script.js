@@ -1,4 +1,4 @@
-const api = require('./service/api')
+const api = require('../../service/api')
 
 function handle_load() {
     get_total()
@@ -10,8 +10,8 @@ function handle_load() {
     localStorage.setItem('bdtw_score', 0)
     localStorage.setItem('gdv_score', 0)
     localStorage.setItem('vis_score', 0)
-    localStorage.setItem('rob_score', 0)
-    localStorage.setItem('let_score', 0)
+    localStorage.setItem('ltr_score', 0)
+    localStorage.setItem('aap_score', 0)
 
     document.querySelector('p#tha_score').textContent = localStorage.getItem('tha_score')
     document.querySelector('p#nyx_score').textContent = localStorage.getItem('nyx_score')
@@ -19,8 +19,8 @@ function handle_load() {
     document.querySelector('p#bdtw_score').textContent = localStorage.getItem('bdtw_score')
     document.querySelector('p#gdv_score').textContent = localStorage.getItem('gdv_score')
     document.querySelector('p#vis_score').textContent = localStorage.getItem('vis_score')
-    document.querySelector('p#rob_score').textContent = localStorage.getItem('rob_score')
-    document.querySelector('p#let_score').textContent = localStorage.getItem('let_score')
+    document.querySelector('p#ltr_score').textContent = localStorage.getItem('ltr_score')
+    document.querySelector('p#aap_score').textContent = localStorage.getItem('aap_score')
 
     select_question()
 }
@@ -75,10 +75,10 @@ function select_question() {
     try {
         api.get(`game?qid=${localStorage.getItem('current_question')}`).then(response => {
             localStorage.setItem('answered', 'no')
-            
+
             const values = response.data[0]
 
-            document.querySelector('h1#question_header').textContent = `${values.equipe.toUpperCase()}`
+            document.querySelector('h1#question_header').textContent = `QUESTÃO ${localStorage.getItem('current_question')}`
 
             document.querySelector('h2#question_text').textContent = values.pergunta
 
@@ -101,38 +101,7 @@ function select_question() {
             document.querySelector(`span#d`).style.background = '#ffffff'
             document.querySelector(`span#d`).style.color = 'inherit'
 
-            switch (values.equipe) {
-                case 'nyx':
-                    document.body.style.background = '#191b1f'
-                    document.querySelector('h1#question_header').style.color = '#ffffff'
-                    document.querySelector('span#question_back').style.color = '#ffffff'
-                    document.querySelector('span#question_fwd').style.color = '#ffffff'
-                    break;
-                case 'bdtw':
-                    document.body.style.background = '#ff6600'
-                    document.querySelector('h1#question_header').style.color = '#ffffff'
-                    document.querySelector('span#question_back').style.color = '#ffffff'
-                    document.querySelector('span#question_fwd').style.color = '#ffffff'
-                    break
-                case 'gdv':
-                    document.body.style.background = '#ffc400'
-                    document.querySelector('h1#question_header').style.color = '#111111'
-                    document.querySelector('span#question_back').style.color = '#111111'
-                    document.querySelector('span#question_fwd').style.color = '#111111'
-                    break
-                case 'vis':
-                    document.body.style.background = '#009CBF'
-                    document.querySelector('h1#question_header').style.color = '#ffffff'
-                    document.querySelector('span#question_back').style.color = '#ffffff'
-                    document.querySelector('span#question_fwd').style.color = '#ffffff'
-                    break
-                default:
-                    document.body.style.background = '#d58d9c'
-                    document.querySelector('h1#question_header').style.color = '#ffffff'
-                    document.querySelector('span#question_back').style.color = '#ffffff'
-                    document.querySelector('span#question_fwd').style.color = '#ffffff'
-                    break;
-            }
+            team_color(values.equipe)
         })
     } catch (error) {
         alert(error)
@@ -149,7 +118,7 @@ function handle_answer(alt) {
         } else {
             document.querySelector(`span#${alt}`).style.background = 'red'
             document.querySelector(`span#${alt}`).style.color = 'white'
-    
+
             document.querySelector(`span#${answer}`).style.background = 'green'
             document.querySelector(`span#${answer}`).style.color = 'white'
         }
@@ -170,4 +139,71 @@ function get_total() {
 
 function pop_wildcard(team) {
     document.querySelector(`label#${team}`).remove()
+}
+
+function team_color(team) {
+    switch (team) {
+        case 'tha':
+            document.body.style.background = '#fd1115'
+            document.querySelector('h1#question_header').style.color = '#ffffff'
+            document.querySelector('span#question_back').style.color = '#ffffff'
+            document.querySelector('span#question_fwd').style.color = '#ffffff'
+            break
+
+        case 'nyx':
+            document.body.style.background = '#191b1f'
+            document.querySelector('h1#question_header').style.color = '#ffffff'
+            document.querySelector('span#question_back').style.color = '#ffffff'
+            document.querySelector('span#question_fwd').style.color = '#ffffff'
+            break
+
+        case 'raf':
+            document.body.style.background = '#d58d9c'
+            document.querySelector('h1#question_header').style.color = '#ffffff'
+            document.querySelector('span#question_back').style.color = '#ffffff'
+            document.querySelector('span#question_fwd').style.color = '#ffffff'
+            break
+
+        case 'bdtw':
+            document.body.style.background = '#ff6600'
+            document.querySelector('h1#question_header').style.color = '#ffffff'
+            document.querySelector('span#question_back').style.color = '#ffffff'
+            document.querySelector('span#question_fwd').style.color = '#ffffff'
+            break
+
+        case 'gdv':
+            document.body.style.background = '#ffc400'
+            document.querySelector('h1#question_header').style.color = '#ffffff'
+            document.querySelector('span#question_back').style.color = '#ffffff'
+            document.querySelector('span#question_fwd').style.color = '#ffffff'
+            break
+
+        case 'vis':
+            document.body.style.background = '#009cbf'
+            document.querySelector('h1#question_header').style.color = '#ffffff'
+            document.querySelector('span#question_back').style.color = '#ffffff'
+            document.querySelector('span#question_fwd').style.color = '#ffffff'
+            break
+
+        case 'ltr':
+            document.body.style.background = '#4d0080'
+            document.querySelector('h1#question_header').style.color = '#ffffff'
+            document.querySelector('span#question_back').style.color = '#ffffff'
+            document.querySelector('span#question_fwd').style.color = '#ffffff'
+            break
+
+        case 'aap':
+            document.body.style.background = '#00801c'
+            document.querySelector('h1#question_header').style.color = '#ffffff'
+            document.querySelector('span#question_back').style.color = '#ffffff'
+            document.querySelector('span#question_fwd').style.color = '#ffffff'
+            break
+
+        default:
+            document.body.style.background = '#4c9697'
+            document.querySelector('h1#question_header').style.color = '#ffffff'
+            document.querySelector('span#question_back').style.color = '#ffffff'
+            document.querySelector('span#question_fwd').style.color = '#ffffff'
+            break
+    }
 }

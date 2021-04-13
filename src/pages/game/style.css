@@ -67,7 +67,7 @@ body {
   height: 100%;
 }
 
-.answer-row {
+.answer-col {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -75,11 +75,11 @@ body {
   height: 100%;
 }
 
-.answer-row:last-child {
+.answer-col:last-child {
   align-items: flex-end;
 }
 
-.answer-row span {
+.answer-col span {
   font-size: 1.1rem;
   text-align: center;
   display: flex;
@@ -95,7 +95,7 @@ body {
   min-height: 40%;
 }
 
-.answer-row span:hover {
+.answer-col span:hover {
   filter: brightness(75%);
 }
 

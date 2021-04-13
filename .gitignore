@@ -89,3 +89,5 @@ typings/
 out/
 
 *datasets*
+*migrations*
+server.js

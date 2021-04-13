@@ -28,7 +28,7 @@ const createWindow = () => {
   server.listen(3333)
 
   mainWindow.loadURL('http://localhost:3333')
-  mainWindow.loadFile(path.join(__dirname, 'index.html'))
+  mainWindow.loadFile(path.join(__dirname, '/pages/main_menu/index.html'))
 }
 
 app.on('ready', createWindow)

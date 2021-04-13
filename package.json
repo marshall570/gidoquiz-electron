@@ -1,10 +1,11 @@
 {
-  "name": "gidaquiz",
-  "productName": "GIDA QUIZ",
+  "name": "gidoquiz",
+  "productName": "GIDO QUIZ",
   "version": "0.0.1",
   "description": "Jogo de quiz para a Gincana Imagens da Organização",
   "main": "src/index.js",
   "scripts": {
+    "server": "nodemon ./src/server.js",
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
@@ -21,13 +22,14 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "gidaquiz"
+            "name": "gidoquiz"
           }
         },
         {
           "name": "@electron-forge/maker-zip",
           "platforms": [
-            "darwin", "linux"
+            "darwin",
+            "linux"
           ]
         }
       ]
@@ -38,6 +40,8 @@
     "celebrate": "^14.0.0",
     "electron-squirrel-startup": "^1.0.0",
     "express": "^4.17.1",
+    "fs": "*",
+    "json2xlsx": "^0.1.6",
     "knex": "^0.95.4",
     "sqlite3": "^5.0.2"
   },
@@ -45,6 +49,7 @@
     "@electron-forge/cli": "^6.0.0-beta.54",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
     "@electron-forge/maker-zip": "^6.0.0-beta.54",
-    "electron": "12.0.2"
+    "electron": "12.0.2",
+    "nodemon": "^2.0.7"
   }
 }

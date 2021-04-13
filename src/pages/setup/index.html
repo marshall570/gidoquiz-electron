@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js"></script>
+  <title>GIDO QUIZ</title>
+</head>
+
+<body>
+  <section class="main-box">
+    <div class="form-header">
+      <span class="back-icon" onclick="handle_back()">⬅</span>
+      <h1>CADASTRO DE PERGUNTAS</h1>
+      <span class="bomb-icon" onclick="handle_nuke()">💣</span>
+    </div>
+
+    <form action="">
+      <label for="">PERGUNTA</label>
+      <textarea name="txt_question" id="txt_question" cols="30" rows="5" ></textarea>
+
+      <div class="form-row">
+        <div class="label-input">
+          <label for="">ALTERNATIVA A</label>
+          <textarea name="txt_alt_a" id="txt_alt_a" cols="30" rows="2"></textarea>
+        </div>
+
+        <div class="label-input">
+          <label for="">ALTERNATIVA B</label>
+          <textarea name="txt_alt_b" id="txt_alt_b" cols="30" rows="2"></textarea>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="label-input">
+          <label for="">ALTERNATIVA C</label>
+          <textarea name="txt_alt_c" id="txt_alt_c" cols="30" rows="2"></textarea>
+        </div>
+
+        <div class="label-input">
+          <label for="">ALTERNATIVA D</label>
+          <textarea name="txt_alt_d" id="txt_alt_d" cols="30" rows="2"></textarea>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="label-input">
+          <label for="">RESPOSTA</label>
+          <select name="cmb_answer" id="cmb_answer">
+            <option value="a" selected>A</option>
+            <option value="b">B</option>
+            <option value="c">C</option>
+            <option value="d">D</option>
+          </select>
+        </div>
+        
+        <div class="label-input">
+          <label for="">EQUIPE</label>
+          <select name="cmb_team" id="cmb_team">
+            <option value="tha">THA</option>
+            <option value="nyx" selected>NYX</option>
+            <option value="raf">RAF</option>
+            <option value="bdtw">BDTW</option>
+            <option value="gdv">GDV</option>
+            <option value="vis">VIS</option>
+            <option value="ltr">LTR</option>
+            <option value="aap">AAP</option>
+          </select>
+        </div>
+      </div>
+    </form>
+
+    <div class="operations">
+      <button style="background: #16cf20;" onclick="handle_save()">SALVAR PERGUNTA</button>
+      <button onclick="handle_spreadsheet()">GERAR JSON</button>
+    </div>
+  </section>
+</body>
+
+</html>

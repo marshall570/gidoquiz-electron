@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="index.css">
-  <script src="script.js"></script>
-  <title>GIDA QUIZ</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js"></script>
+  <title>GIDO QUIZ</title>
 </head>
 
 <body onload="handle_load()">
@@ -40,7 +40,7 @@
 
     <div class="team">
       <div class="team-header">
-        <label for="" style="color: #4d0080;">RAF</label>
+        <label for="" style="color: #d58d9c;">RAF</label>
         <label for="" class="wildcard" id="wild_raf" ondblclick="pop_wildcard('wild_raf')">🃏</label>
       </div>
 
@@ -92,27 +92,27 @@
 
     <div class="team">
       <div class="team-header">
-        <label for="" style="color: #00801c;">ROB</label>
-        <label for="" class="wildcard" id="wild_rob" ondblclick="pop_wildcard('wild_rob')">🃏</label>
+        <label for="" style="color: #4d0080;">LTR</label>
+        <label for="" class="wildcard" id="wild_ltr" ondblclick="pop_wildcard('wild_ltr')">🃏</label>
       </div>
 
       <div class="score-buttons">
-        <span onclick="handle_score_minus('rob_score')">➖</span>
-        <p id="rob_score">0</p>
-        <span onclick="handle_score_plus('rob_score')">➕</span>
+        <span onclick="handle_score_minus('ltr_score')">➖</span>
+        <p id="ltr_score">0</p>
+        <span onclick="handle_score_plus('ltr_score')">➕</span>
       </div>
     </div>
 
     <div class="team">
       <div class="team-header">
-        <label for="" style="color: #ba55d3;">LET</label>
-        <label for="" class="wildcard" id="wild_let" ondblclick="pop_wildcard('wild_let')">🃏</label>
+        <label for="" style="color: #00801c;">AAP</label>
+        <label for="" class="wildcard" id="wild_aap" ondblclick="pop_wildcard('wild_aap')">🃏</label>
       </div>
 
       <div class="score-buttons">
-        <span onclick="handle_score_minus('let_score')">➖</span>
-        <p id="let_score">0</p>
-        <span onclick="handle_score_plus('let_score')">➕</span>
+        <span onclick="handle_score_minus('aap_score')">➖</span>
+        <p id="aap_score">0</p>
+        <span onclick="handle_score_plus('aap_score')">➕</span>
       </div>
     </div>
   </section>
@@ -127,12 +127,12 @@
     <h2 id="question_text"></h2>
 
     <div class="answer-area">
-      <div class="answer-row">
+      <div class="answer-col">
         <span id="a" onclick="handle_answer('a')"></span>
         <span id="c" onclick="handle_answer('c')"></span>
       </div>
       
-      <div class="answer-row">
+      <div class="answer-col">
         <span id="b" onclick="handle_answer('b')"></span>
         <span id="d" onclick="handle_answer('d')"></span>
       </div>
