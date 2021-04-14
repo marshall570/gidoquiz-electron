@@ -88,6 +88,4 @@ typings/
 # Electron-Forge
 out/
 
-*datasets*
-*migrations*
-server.js
+src/database/migrations/
