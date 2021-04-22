@@ -2,7 +2,7 @@ require('dotenv/config')
 const axios = require('axios')
 
 const api = axios.create({
-    baseURL: process.env.APP_URL
+    baseURL: 'https://gidoquiz-backend.herokuapp.com/'
 })
 
 module.exports = api
