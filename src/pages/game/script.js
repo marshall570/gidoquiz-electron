@@ -76,7 +76,7 @@ function select_question() {
         api.get(`game?qid=${localStorage.getItem('current_question')}`).then(response => {
             localStorage.setItem('answered', 'no')
 
-            const values = response.data[0]
+            const values = response.data
 
             document.querySelector('h1#question_header').textContent = `QUESTÃO ${localStorage.getItem('current_question')}`
 

@@ -18,7 +18,7 @@ const createWindow = () => {
     }
   })
 
-  mainWindow.loadURL('https://gidoquiz.herokuapp.com/')
+  mainWindow.loadURL('https://gidoquiz-backend.herokuapp.com/')
   mainWindow.loadFile(path.join(__dirname, '/pages/main_menu/index.html'))
 }
 
