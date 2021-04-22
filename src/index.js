@@ -1,8 +1,6 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
-const express = require('express')
-const { errors } = require('celebrate')
-const routes = require('./routes')
+require('dotenv/config')
 
 if (require('electron-squirrel-startup')) {
   app.quit()
@@ -20,14 +18,7 @@ const createWindow = () => {
     }
   })
 
-  const server = express()
-
-  server.use(errors())
-  server.use(express.json())
-  server.use(routes)
-  server.listen(3333)
-
-  mainWindow.loadURL('http://localhost:3333')
+  mainWindow.loadURL('https://gidoquiz.herokuapp.com/')
   mainWindow.loadFile(path.join(__dirname, '/pages/main_menu/index.html'))
 }
 
