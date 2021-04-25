@@ -10,7 +10,7 @@
   <title>GIDO QUIZ</title>
 </head>
 
-<body onload="handle_load()">
+<body>
   <section class="main-box">
     <div class="main-header">
       <h1>GIDO QUIZ</h1>
@@ -19,7 +19,21 @@
 
     <div class="menu-buttons">
       <button class="play" onclick="handle_play()">JOGAR</button>
-      <button class="setup" onclick="handle_setup()">CADASTRAR PERGUNTAS</button>
+
+      <div class="dataset">
+        <label>ESCOLHA UM DATASET</label>
+        <select name="cmb_team" id="cmb_team">
+          <option value="tha">THA</option>
+          <option value="nyx">NYX</option>
+          <option value="raf">RAF</option>
+          <option value="bdtw">BDTW</option>
+          <option value="gdv">GDV</option>
+          <option value="vis">VIS</option>
+          <option value="ltr">LTR</option>
+          <option value="aap">AAP</option>
+        </select>
+      </div>
+      <!-- <button class="setup" onclick="handle_setup()">CADASTRAR PERGUNTAS</button> -->
     </div>
   </section>
 </body>

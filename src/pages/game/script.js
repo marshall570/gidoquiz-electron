@@ -73,7 +73,7 @@ function handle_question_fwd() {
 
 function select_question() {
     try {
-        api.get(`game?qid=${localStorage.getItem('current_question')}`).then(response => {
+        api.get(`game?qid=${localStorage.getItem('current_question')}&tn=${localStorage.getItem('dataset')}`).then(response => {
             localStorage.setItem('answered', 'no')
 
             const values = response.data

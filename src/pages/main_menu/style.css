@@ -89,7 +89,20 @@ button:hover {
   color: #ffffff;
 }
 
-.setup {
-  background: #1685cf;
-  color: #ffffff;
+.dataset {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #c62421;
+  margin-bottom: 0.5rem;
+}
+
+select {
+  width: 100%;
+  font-size: 1.15rem;
 }

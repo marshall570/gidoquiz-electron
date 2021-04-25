@@ -1,23 +1,23 @@
+const { select } = require('../../../../backend/src/controller/game_controller')
 const api = require('../../service/api')
 
-function handle_load() {
+function handle_play() {
     try {
-        api.get('/total').then(response => {
-            localStorage.setItem('registered_questions', Number(response.data.total_perguntas))
+        const team = document.querySelector('select#cmb_team').value
+
+        api.get(`/total?tn=${team}`).then(response => {
+            if (Number(response.data.total_perguntas) === 0) {
+                alert('Não existem perguntas cadastradas no sistema!\nPor favor clique em <CADASTRAR PERGUNTAS> para cadastrar novas perguntas.')
+            } else {
+                localStorage.setItem('dataset', team)
+                window.location.href = '../game/index.html'
+            }
         })
     } catch (error) {
         alert(error)
     }
-}
 
-function handle_play() {
-    const registered_questions = Number(localStorage.getItem('registered_questions'))
 
-    if (registered_questions === 0) {
-        alert('Não existem perguntas cadastradas no sistema!\nPor favor clique em <CADASTRAR PERGUNTAS> para cadastrar novas perguntas.')
-    } else {
-        window.location.href = '../game/index.html'
-    }
 }
 
 function handle_setup() {
