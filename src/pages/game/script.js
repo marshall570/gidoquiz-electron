@@ -129,7 +129,7 @@ function handle_answer(alt) {
 
 function get_total() {
     try {
-        api.get('/total').then(response => {
+        api.get(`/total?tn=${localStorage.getItem('dataset')}`).then(response => {
             localStorage.setItem('total_questions', Number(response.data.total_perguntas))
         })
     } catch (error) {

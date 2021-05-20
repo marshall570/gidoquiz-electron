@@ -88,4 +88,4 @@ typings/
 # Electron-Forge
 out/
 
-src/database/migrations/
+src/pages/setup
